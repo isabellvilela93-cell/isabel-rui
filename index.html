@@ -1,1 +1,50 @@
-<!doctype html><html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Isabel & Rui</title><link rel="stylesheet" href="style.css"></head><body><div class="cover" id="cover"><div class="small">Temos um convite para ti</div><div class="gate" aria-hidden="true"><div class="leaf left"></div><div class="leaf right"></div></div><h2>Isabel & Rui</h2><button id="openInvite">Abrir convite</button></div><main id="main" inert><section class="hero"><div class="small">Vamos casar</div><h1>Isabel & Rui</h1><p>17 de julho de 2027 · Douro</p><svg class="land" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustração estilizada do Douro"><path d="M0 140 Q100 5 220 100 T420 70 T600 100 V240 H0Z" fill="#a8b19a" opacity=".6"/><path d="M0 170 Q100 70 210 150 T420 100 T600 135 V240 H0Z" fill="#89977b" opacity=".65"/><path d="M600 145 Q360 100 330 155 T0 215 L0 240 H190 Q430 190 400 160 T600 160Z" fill="#b5c6c4"/><g fill="none" stroke="#f8f5ed" opacity=".8"><path d="M0 155 Q100 45 220 120 M0 170 Q100 65 220 135 M0 185 Q100 85 220 150 M420 115 Q510 60 600 110 M430 130 Q510 80 600 125"/></g></svg><p>Queremos celebrar este dia convosco.</p><div class="count" id="count"></div></section><section><div class="small">O nosso dia</div><h2>Um casamento no Douro</h2><div class="rule"></div><p>Entre vinhas, paisagens e as pessoas de quem mais gostamos.</p><h2>Quinta do Outeiro</h2><p>Resende, Portugal</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Quinta+do+Outeiro+Resende+Portugal">Ver localização</a></section><nav aria-label="Navegação"><a href="#programa">Programa</a><a href="#alojamento">Alojamento</a><a href="#rsvp">Presença</a></nav><section id="programa"><h2>O programa</h2><p>Horários provisórios</p><div class="timeline"><div class="event"><span>14h00</span><p>Cerimónia religiosa · Vila Real</p></div><div class="event"><span>16h00</span><p>Receção e cocktail</p></div><div class="event"><span>21h00</span><p>Jantar</p></div><div class="event"><span>À noite</span><p>Música e festa</p></div></div></section><section><h2>A nossa história</h2><div class="placeholder">Espaço reservado às fotografias dos noivos</div></section><section id="alojamento"><h2>Onde ficar</h2><p>Informações sobre alojamentos a disponibilizar brevemente.</p></section><section id="rsvp"><h2>Contamos contigo?</h2><p>A confirmação de presença será disponibilizada brevemente.</p><form id="rsvpForm"><label>Nome<input name="nome" required autocomplete="name"></label><label>Presença<select name="presenca" required><option value="">Selecionar</option><option>Sim</option><option>Não</option></select></label><label>Restrições alimentares<textarea name="restricoes"></textarea></label><button disabled>Enviar confirmação (brevemente)</button></form></section></main><footer><div class="rule"></div>Isabel & Rui · 17.07.2027</footer><script src="script.js" defer></script></body></html>
+<style>
+.gate {
+  position: relative;
+  width: min(85vw, 420px);
+  height: auto;
+  aspect-ratio: 3 / 4;
+  margin: 25px auto;
+  display: flex;
+  perspective: 1200px;
+  background: none;
+  border: none;
+}
+.gate .leaf {
+  width: 50%;
+  height: 100%;
+  background-image: url("Portail en fer forgé au soleil.png");
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 0;
+  transition: transform 1.8s ease-in-out;
+}
+.gate .leaf::before,
+.gate .leaf::after {
+  display: none;
+}
+.gate .left {
+  background-position: left center;
+  transform-origin: left center;
+}
+.gate .right {
+  background-position: right center;
+  transform-origin: right center;
+}
+.gate.aberto .left {
+  transform: rotateY(-100deg);
+}
+.gate.aberto .right {
+  transform: rotateY(100deg);
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("openInvite")
+    .addEventListener("click", function () {
+      document.querySelector(".gate")
+        .classList.add("aberto");
+    });
+});
+</script>
