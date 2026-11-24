@@ -1,0 +1,3 @@
+Publicação: criar um repositório público no GitHub, carregar index.html, style.css e script.js na raiz. Settings > Pages > Deploy from a branch > main / (root) > Save. O endereço aparece em Pages.
+Editar index.html para textos, horários e imagens; style.css para decoração; script.js para animações.
+O formulário está desativado até ligar um serviço de recolha de respostas. Não publicar dados privados. Horários provisórios.
